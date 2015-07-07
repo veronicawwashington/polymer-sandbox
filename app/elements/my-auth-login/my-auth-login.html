@@ -1,0 +1,92 @@
+<link rel="import" href="../polymer/polymer.html">
+<!-- http://fortawesome.github.io/Font-Awesome/get-started/ -->
+<!--<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!--<link rel="import" href="../../bower_components/iron-meta/iron-meta.html">-->
+
+<dom-module id="my-auth-login">
+  <style>
+		p {
+			color: gray;
+		}
+		paper-material {
+			border-radius: 2px;
+			height: 100%;
+			padding: 16px;
+			width: calc(33.33% - 16px);
+			min-width: 350px;
+			margin: 16px auto;
+			background: white;
+		}
+		paper-button {
+			width: 100%;
+		}
+		paper-button.top {
+			background-color: var(--default-primary-color);
+			color: var(--text-primary-color);
+		}
+		paper-button.top:hover {
+			background-color: var(--dark-primary-color);
+		}
+		paper-button.sub {
+			text-align: left
+		}
+		paper-button.sub:hover {
+			background-color: black;
+			color: white;
+			-o-transition      : .25s;
+			-ms-transition     : .25s;
+			-moz-transition    : .25s;
+			-webkit-transition : .25s;
+			transition         : .25s;
+		}
+  </style>
+  <template>
+		<!--<iron-meta id="meta2" key="info" value="foo/bar"></iron-meta>-->
+		<paper-material class="layout vertical">
+			<h2 class="paper-font-display2">Login</h2>
+			<p>
+				<a href="#">Forgot password?</a>
+				&bull;
+				<a href="#">Create New Account</a>
+			</p>
+			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-google           "></i>&nbsp; Login with Google</paper-button>
+			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-google-plus      "></i>&nbsp; Login with Google Plus</paper-button>
+	    <paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-facebook-official"></i>&nbsp; Login with Facebook</paper-button>
+			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-linkedin-square  "></i>&nbsp; Login with Linked In</paper-button>
+			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-yahoo            "></i>&nbsp; Login with Yahoo</paper-button>
+			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-twitter          "></i>&nbsp; Login with Twitter</paper-button>
+			<p>or for<!-- <span>{{ironmeta}}</span>--></p>
+			<form is="iron-form" id="form" method="post" action="/form/handler">
+				<paper-input name="email" label="Email address"></paper-input>
+				<paper-input name="pw"    label="Password"></paper-input>
+			</form>
+			<paper-button  raised class="top">Login</paper-button>
+		</paper-material>
+  </template>
+</dom-module>
+<script>
+  (function() {
+    Polymer({
+      is: 'my-auth-login',
+      properties: {
+        greeting: {
+          type: String,
+          value: 'Welcome!',
+          notify: true
+        }/*,
+				ironmeta: {
+					type: Object,
+					value: function(){
+						return this.$.meta.byKey('info').getAttribute('value');
+					}
+				}*/
+      }
+    });
+  })();
+</script>
+
+<!--
+this.$.selector.
+this.route
+-->

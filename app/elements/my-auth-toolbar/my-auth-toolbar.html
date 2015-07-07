@@ -1,0 +1,58 @@
+<link rel="import" href="../polymer/polymer.html">
+<!-- http://fortawesome.github.io/Font-Awesome/get-started/ -->
+<!--<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!--<link rel="import" href="../../bower_components/iron-meta/iron-meta.html">-->
+
+<dom-module id="my-auth-toolbar">
+  <style>
+    /*:host {
+      display: block;
+    }*/
+		paper-button {
+			-o-transition      : .25s;
+			-ms-transition     : .25s;
+			-moz-transition    : .25s;
+			-webkit-transition : .25s;
+			transition         : .25s;
+		}
+		#register::shadow {
+			background: var(--accent-color);
+		}
+		paper-button:hover {
+			background: white;
+			color: black;
+			font-weight: bold;
+		}
+		#register:hover {
+			background: white;
+			color: black;
+			font-weight: bold;
+		}
+  </style>
+  <template>
+		<iron-selector id="selector" class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
+			<a data-route="login"   ><paper-button xraised id="login"   ><i class="fa xfa-lg xfa-4x xfa-fw fa-sign-in"></i> Login   </paper-button></a>
+			<a data-route="register"><paper-button  raised id="register"><i class="fa xfa-lg xfa-4x xfa-fw fa-bolt"   ></i> Register</paper-button></a><!--Sign up-->
+		</iron-selector>
+  </template>
+</dom-module>
+<script>
+  (function() {
+    Polymer({
+      is: 'my-auth-toolbar',
+      properties: {
+        greeting: {
+          type: String,
+          value: 'Welcome!',
+          notify: true
+        }
+      }
+    });
+  })();
+</script>
+
+<!--
+this.$.selector.
+this.route
+-->

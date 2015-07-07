@@ -1,0 +1,40 @@
+{
+  "name": "polymer-starter-kit",
+  "private": true,
+  "dependencies": {
+    "iron-elements": "PolymerElements/iron-elements#1.0.0",
+    "paper-elements": "PolymerElements/paper-elements#1.0.1",
+    "platinum-elements": "PolymerElements/platinum-elements#1.0.1",
+    "neon-elements": "PolymerElements/neon-elements#1.0.0",
+    "page": "visionmedia/page.js#~1.6.3",
+    "firebase-element": "Polymer/firebase-element#~0.5.6",
+    "more-routing": "Polymore/more-routing#~1.0.0",
+    "google-signin": "GoogleWebComponents/google-signin#~1.0.2",
+    "pvc-globals": "Divshot/pvc-globals#~0.1.0",
+    "paper-dropdown": "Polymer/paper-dropdown#~0.5.6",
+    "polymer-themes": "~1.0.1",
+    "core-menu": "polymer/core-menu#~0.5.6",
+    "core-item": "polymer/core-item#~0.5.6",
+    "login-box": "~0.1.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "*",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^1.0.0",
+    "webcomponentsjs": "0.7.5",
+    "paper-button": "^1.0.0",
+    "paper-ripple": "^1.0.0",
+    "web-animations-js": "^2.0.0",
+    "paper-icon-button": "^1.0.0",
+    "paper-item": "^1.0.0",
+    "font-roboto": "master",
+    "paper-input": "^1.0.0",
+    "core-meta": "^0.5",
+    "core-icons": "^0.5",
+    "core-icon": "^0.5",
+    "core-iconset": "^0.5",
+    "core-component-page": "^0.5"
+  }
+}
