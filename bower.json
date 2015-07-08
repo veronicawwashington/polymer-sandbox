@@ -15,7 +15,8 @@
     "polymer-themes": "~1.0.1",
     "core-menu": "polymer/core-menu#~0.5.6",
     "core-item": "polymer/core-item#~0.5.6",
-    "login-box": "~0.1.0"
+    "login-box": "~0.1.0",
+    "google-map": "GoogleWebComponents/google-map#~1.0.3"
   },
   "devDependencies": {
     "web-component-tester": "*",
@@ -35,6 +36,8 @@
     "core-icons": "^0.5",
     "core-icon": "^0.5",
     "core-iconset": "^0.5",
-    "core-component-page": "^0.5"
+    "core-component-page": "^0.5",
+    "paper-shadow": "^0.5",
+    "core-iconset-svg": "^0.5"
   }
 }

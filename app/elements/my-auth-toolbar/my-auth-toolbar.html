@@ -31,9 +31,11 @@
 		}
   </style>
   <template>
+		<iron-meta id="meta" key="route" xvalue="foo-bar" value="{{route}}"></iron-meta>
 		<iron-selector id="selector" class="list" attr-for-selected="data-route" selected="{{route}}" on-iron-select="onMenuSelect">
-			<a data-route="login"   ><paper-button xraised id="login"   ><i class="fa xfa-lg xfa-4x xfa-fw fa-sign-in"></i> Login   </paper-button></a>
-			<a data-route="register"><paper-button  raised id="register"><i class="fa xfa-lg xfa-4x xfa-fw fa-bolt"   ></i> Register</paper-button></a><!--Sign up-->
+			<a data-route="login"   ><paper-button xraised id="login"    on-tap="{{updateRoute}}"><i class="fa xfa-lg xfa-4x xfa-fw fa-sign-in"></i> Login   </paper-button></a>
+			<a data-route="register"><paper-button  raised id="register" on-tap="{{updateRoute}}"><i class="fa xfa-lg xfa-4x xfa-fw fa-bolt"   ></i> Register</paper-button></a><!--Sign up-->
+			<span>{{route}}</span>
 		</iron-selector>
   </template>
 </dom-module>
@@ -42,12 +44,18 @@
     Polymer({
       is: 'my-auth-toolbar',
       properties: {
-        greeting: {
-          type: String,
-          value: 'Welcome!',
-          notify: true
-        }
-      }
+        route: {
+					type: String,
+					notify: true
+				}
+      },
+			ready: function(){
+				//this.route = "Hello world, I am your route from the auth toolbar.";
+				//this.route = "home";
+			},
+			updateRoute: function(){
+				this.route = "Update Route";
+			}
     });
   })();
 </script>

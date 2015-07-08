@@ -28,6 +28,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app.route = 'sell';
       app.params = data.params;
     });
+
+    page('/map', function () {
+      app.route = 'map';
+    });
 		
     page('/settlement', function (data) {
       app.route = 'settlement';

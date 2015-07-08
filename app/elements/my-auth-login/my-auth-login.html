@@ -42,7 +42,7 @@
 		}
   </style>
   <template>
-		<!--<iron-meta id="meta2" key="info" value="foo/bar"></iron-meta>-->
+		<iron-meta id="meta" xkey="info" xvalue="foobar"></iron-meta>
 		<paper-material class="layout vertical">
 			<h2 class="paper-font-display2">Login</h2>
 			<p>
@@ -56,7 +56,7 @@
 			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-linkedin-square  "></i>&nbsp; Login with Linked In</paper-button>
 			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-yahoo            "></i>&nbsp; Login with Yahoo</paper-button>
 			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-twitter          "></i>&nbsp; Login with Twitter</paper-button>
-			<p>or for<!-- <span>{{ironmeta}}</span>--></p>
+			<p>ironmeta.route: <span>{{ironmeta}}</span></p>
 			<form is="iron-form" id="form" method="post" action="/form/handler">
 				<paper-input name="email" label="Email address"></paper-input>
 				<paper-input name="pw"    label="Password"></paper-input>
@@ -70,17 +70,13 @@
     Polymer({
       is: 'my-auth-login',
       properties: {
-        greeting: {
-          type: String,
-          value: 'Welcome!',
-          notify: true
-        }/*,
-				ironmeta: {
-					type: Object,
-					value: function(){
-						return this.$.meta.byKey('info').getAttribute('value');
-					}
-				}*/
+        ironmeta: {
+					type: String,
+					notify: true
+				}
+			},
+      attached: function() {
+        this.ironmeta = this.$.meta.byKey("route");
       }
     });
   })();

@@ -50,7 +50,7 @@
 		}
   </style>
   <template>
-		<iron-meta id="meta" key="info" value="foobar"></iron-meta>
+		<iron-meta id="meta" key="info" value="foo/bar"></iron-meta>
 		<paper-material class="layout vertical">
 			<h2 class="paper-font-display2">Register</h2>
 			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-google           "></i>&nbsp; Sign Up with Google</paper-button>
@@ -59,7 +59,7 @@
 			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-linkedin-square  "></i>&nbsp; Sign Up with Linked In</paper-button>
 			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-yahoo            "></i>&nbsp; Sign Up with Yahoo</paper-button>
 			<paper-button xraised class="sub"><i class="fa fa-lg xfa-4x fa-fw fa-twitter          "></i>&nbsp; Sign Up with Twitter</paper-button>
-			<p>or create new account for <span>{{ironmeta}}</span></p>
+			<p>ironmeta.route: <span>{{ironmeta}}</span></p>
 			<form is="iron-form" id="form" method="post" action="/form/handler">
 				<paper-input name="email" label="Email address"></paper-input>
 				<paper-input name="pw"    label="Password"     ></paper-input>
@@ -74,6 +74,22 @@
     Polymer({
       is: 'my-auth-register',
       properties: {
+        ironmeta: {
+					type: String,
+					notify: true
+				}
+			},
+      attached: function() {
+        this.ironmeta = this.$.meta.byKey("route");
+      }
+    });
+  })();
+</script>
+<!--<script>
+  (function() {
+    Polymer({
+      is: 'my-auth-register',
+      properties: {
         greeting: {
           type: String,
           value: 'Welcome!',
@@ -83,9 +99,9 @@
 					//type: String,
 					//type: undefined,
 					value: function(){
-						return "Hello world";
-						//return (new Polymer.IronMetaQuery({key: 'info'}).value);
-						// Above this line works... somewhat
+						//return "Hello world";
+						return (new Polymer.IronMetaQuery({key: 'info'}).value);
+						// Below this line breaks
 						//return this.$.meta.IronMetaQuery({key: 'info'}).value;
 						//return this.IronMetaQuery({key: 'info'}).value;
 						//return this.$.meta.byKey('info').getAttribute('value');
@@ -96,7 +112,7 @@
     });
   })();
 </script>
-
+-->
 <!--
 this.$.selector.
 this.route

@@ -78,6 +78,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					<a data-route="home"      ><iron-icon icon="home"           ></iron-icon><span>Home      </span></a>
 					<a data-route="buy"       ><iron-icon icon="add-circle"     ></iron-icon><span>Buy       </span></a>
 					<a data-route="sell"      ><iron-icon icon="remove-circle"  ></iron-icon><span>Sell      </span></a>
+					<a data-route="map"       ><iron-icon icon="star"           ></iron-icon><span>Map       </span></a>
 					<a data-route="settlement"><iron-icon icon="account-balance"></iron-icon><span>Settlement</span></a>
 					<a data-route="settings"  ><iron-icon icon="settings"       ></iron-icon><span>Settings  </span></a>
 					<a data-route="support"   ><iron-icon icon="mail"           ></iron-icon><span>Support   </span></a>
@@ -119,18 +120,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <section data-route="register"><my-auth-register></my-auth-register></section>
             <section data-route="login"   ><my-auth-login   ></my-auth-login   ></section>
             <section data-route="home">
-							
-							<paper-material elevation="1">
-								<div class="horizontal center-justified layout">
-									<paper-button xraised z="3" elevation="3">
-										Login
-									</paper-button>
-									<paper-button class="primary x-scope paper-button-0" raised="" onclick="document.getElementById('dialog-actions').open();" role="button" tabindex="0" aria-disabled="false">
-										Dialog
-									</paper-button>
-								</div>
-							</paper-material>
-							
+		
               <paper-material elevation="1">
                 <my-greeting></my-greeting>
 								
@@ -181,6 +171,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <a href="/#!/sell/Rob">Rob</a>
               </paper-material>
             </section>
+						
+						<section data-route="map">
+							<paper-material>
+								<google-map style="height:600px" latitude="37.779" longitude="-122.3892" min-zoom="9" max-zoom="11" language="en">
+									<google-map-marker latitude="37.779" longitude="-122.3892"
+																		 title="Go Giants!" draggable="true">
+										<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/San_Francisco_Giants_Cap_Insignia.svg/200px-San_Francisco_Giants_Cap_Insignia.svg.png" />
+									</google-map-marker>
+								</google-map>
+							</paper-material>
+							<!--<paper-material>
+								<google-map latitude="37.77493" longitude="-122.41942" style="height:600px"></google-map>
+							</paper-material>-->
+						</section>
 
             <section data-route="settlement">
               <paper-material elevation="1" animated="true">
